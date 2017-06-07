@@ -3,6 +3,8 @@ package com.startsmake.llrisetabbardemo.fragment;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.widget.DrawerLayout;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,7 +47,9 @@ public class LeagueFragment extends Fragment {
         imgMiTab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), "跳转我的侧滑", Toast.LENGTH_SHORT).show();
+                //点击调出侧滑菜单（坑在 getActivity() 和 Gravity.LEFT）
+                DrawerLayout drawerLayout = (DrawerLayout) getActivity().findViewById(R.id.drawer_layout);
+                drawerLayout.openDrawer(Gravity.LEFT);
             }
         });
 

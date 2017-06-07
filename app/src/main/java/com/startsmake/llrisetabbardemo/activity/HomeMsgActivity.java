@@ -33,14 +33,5 @@ public class HomeMsgActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-        ImageView imgMi = (ImageView) findViewById(R.id.img_mi);
-        imgMi.setVisibility(View.VISIBLE);
-        imgMi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(HomeMsgActivity.this, "侧滑栏跳转", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 }
