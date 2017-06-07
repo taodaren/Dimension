@@ -1,12 +1,10 @@
 package com.startsmake.llrisetabbardemo.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.zhaoshuang.weixinrecordeddemo.VideoActivity;
 import com.startsmake.llrisetabbardemo.R;
 import com.startsmake.llrisetabbardemo.fragment.HomeFragment;
 import com.startsmake.llrisetabbardemo.fragment.LeagueFragment;

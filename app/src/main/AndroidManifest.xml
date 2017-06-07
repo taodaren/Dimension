@@ -27,7 +27,6 @@
         <activity android:name=".activity.HomeQRCodeActivity" />
         <activity android:name=".activity.HomeMsgActivity" />
         <activity android:name=".activity.SortActivity" />
-        <activity android:name=".activity.MyDrawerActivity" />
     </application>
 
 </manifest>

@@ -6,15 +6,14 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,7 +21,6 @@ import com.lljjcoder.citypickerview.widget.CityPicker;
 import com.startsmake.llrisetabbardemo.R;
 import com.startsmake.llrisetabbardemo.activity.HomeMsgActivity;
 import com.startsmake.llrisetabbardemo.activity.HomeQRCodeActivity;
-import com.startsmake.llrisetabbardemo.activity.MyDrawerActivity;
 
 /**
  * 首页
@@ -51,15 +49,13 @@ public class HomeFragment extends Fragment {
     }
 
     private void setDrawer(View view) {
-        DrawerLayout drawerLayout = (DrawerLayout) view.findViewById(R.id.drawer_layout);
-
-
-        view.findViewById(R.id.ib_mi_home).setOnClickListener(new View.OnClickListener() {
+        ImageButton ibMine = (ImageButton) view.findViewById(R.id.ib_mi_home);
+        ibMine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), "我的侧滑", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getContext(), MyDrawerActivity.class);
-                startActivity(intent);
+                //点击调出侧滑菜单（坑在 getActivity() 和 Gravity.LEFT）
+                DrawerLayout drawerLayout = (DrawerLayout) getActivity().findViewById(R.id.drawer_layout);
+                drawerLayout.openDrawer(Gravity.LEFT);
             }
         });
     }
