@@ -3,13 +3,13 @@ package com.startsmake.llrisetabbardemo.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Toast;
 
 import com.startsmake.llrisetabbardemo.R;
 import com.startsmake.llrisetabbardemo.fragment.HomeFragment;
 import com.startsmake.llrisetabbardemo.fragment.LeagueFragment;
 import com.startsmake.llrisetabbardemo.fragment.SecondhandFragment;
 import com.startsmake.llrisetabbardemo.fragment.WordFragment;
+import com.startsmake.llrisetabbardemo.publish.PublishPopWindow;
 import com.startsmake.mainnavigatetabbar.widget.MainNavigateTabBar;
 
 public class MainActivity extends AppCompatActivity {
@@ -56,7 +56,9 @@ public class MainActivity extends AppCompatActivity {
      * 首页 → 发布
      */
     public void onClickPublish(View v) {
-        Toast.makeText(this, "弹出 POP", Toast.LENGTH_SHORT).show();
+        PublishPopWindow popWindow = new PublishPopWindow(MainActivity.this);
+        popWindow.showMoreWindow(v);
+
         //跳转小视频功能
 //        Intent intent = new Intent(MainActivity.this, VideoActivity.class);
 //        startActivity(intent);
