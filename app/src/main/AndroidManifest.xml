@@ -28,7 +28,8 @@
         <activity android:name=".activity.HomeMsgActivity" />
         <activity android:name=".activity.SortActivity" />
         <activity android:name=".activity.MineDrawerActivity" />
-        <activity android:name=".publish.PublicGoodsActivity"></activity>
+        <activity android:name=".publish.PublicGoodsActivity" />
+        <activity android:name=".publish.PublicActivityActivity"></activity>
     </application>
 
 </manifest>
