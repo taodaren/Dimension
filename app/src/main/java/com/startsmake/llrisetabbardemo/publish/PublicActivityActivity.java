@@ -5,6 +5,9 @@ import android.os.Bundle;
 
 import com.startsmake.llrisetabbardemo.R;
 
+/**
+ * PopWindow → 发布活动
+ */
 public class PublicActivityActivity extends AppCompatActivity {
 
     @Override

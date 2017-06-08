@@ -15,6 +15,10 @@
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!-- activity有EditText时禁止自动弹出软键盘 -->
+        <!-- 声明Activity时加上：android:windowSoftInputMode="stateHidden" -->
+        <!-- 解决软键盘将布局顶起方法：android:windowSoftInputMode="adjustPan|stateHidden" -->
         <activity
             android:name=".activity.MainActivity"
             android:windowSoftInputMode="stateHidden">
@@ -29,7 +33,9 @@
         <activity android:name=".activity.SortActivity" />
         <activity android:name=".activity.MineDrawerActivity" />
         <activity android:name=".publish.PublicGoodsActivity" />
-        <activity android:name=".publish.PublicActivityActivity"></activity>
+        <activity
+            android:name=".publish.PublicActivityActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
     </application>
 
 </manifest>
