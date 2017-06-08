@@ -58,9 +58,5 @@ public class MainActivity extends AppCompatActivity {
     public void onClickPublish(View v) {
         PublishPopWindow popWindow = new PublishPopWindow(MainActivity.this);
         popWindow.showMoreWindow(v);
-
-        //跳转小视频功能
-//        Intent intent = new Intent(MainActivity.this, VideoActivity.class);
-//        startActivity(intent);
     }
 }

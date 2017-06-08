@@ -27,7 +27,8 @@
         <activity android:name=".activity.HomeQRCodeActivity" />
         <activity android:name=".activity.HomeMsgActivity" />
         <activity android:name=".activity.SortActivity" />
-        <activity android:name=".activity.MineDrawerActivity"></activity>
+        <activity android:name=".activity.MineDrawerActivity" />
+        <activity android:name=".publish.PublicGoodsActivity"></activity>
     </application>
 
 </manifest>
