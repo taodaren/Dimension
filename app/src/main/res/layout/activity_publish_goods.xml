@@ -29,7 +29,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:padding="10dp"
-                android:src="@drawable/public_vedio" />
+                android:src="@drawable/publish_vedio" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -124,10 +124,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:src="@drawable/public_position" />
+                    android:src="@drawable/publish_position" />
 
                 <TextView
-                    android:id="@+id/text_public_city"
+                    android:id="@+id/text_publish_city"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -135,11 +135,11 @@
                     android:text="某某市" />
 
                 <TextView
-                    android:id="@+id/text_public_area"
+                    android:id="@+id/text_publish_area"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
-                    android:layout_toRightOf="@id/text_public_city"
+                    android:layout_toRightOf="@id/text_publish_city"
                     android:text="某某区" />
             </RelativeLayout>
         </LinearLayout>
@@ -167,7 +167,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:padding="10dp"
-                android:src="@drawable/public_add_img" />
+                android:src="@drawable/publish_add_img" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -190,7 +190,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:padding="10dp"
-                android:src="@drawable/public_add_img" />
+                android:src="@drawable/publish_add_img" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -215,7 +215,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:padding="10dp"
-                android:src="@drawable/public_add_img" />
+                android:src="@drawable/publish_add_img" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -243,7 +243,7 @@
         android:layout_marginTop="30dp">
 
         <CheckBox
-            android:id="@+id/checkbox_public_goods"
+            android:id="@+id/checkbox_publish_goods"
             style="@style/CustomCheckBoxTheme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -253,7 +253,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@id/checkbox_public_goods"
+            android:layout_toRightOf="@id/checkbox_publish_goods"
             android:text="同步发布到个人状态中" />
     </RelativeLayout>
 
@@ -267,7 +267,7 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/btn_public"
+            android:id="@+id/btn_publish"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"

@@ -276,7 +276,7 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:padding="10dp"
-                        android:src="@drawable/public_vedio" />
+                        android:src="@drawable/publish_vedio" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -299,7 +299,7 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:padding="10dp"
-                        android:src="@drawable/public_add_img" />
+                        android:src="@drawable/publish_add_img" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -324,7 +324,7 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:padding="10dp"
-                        android:src="@drawable/public_add_img" />
+                        android:src="@drawable/publish_add_img" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -342,7 +342,7 @@
         android:background="@color/white">
 
         <Button
-            android:id="@+id/btn_public"
+            android:id="@+id/btn_publish"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"

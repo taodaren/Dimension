@@ -16,12 +16,12 @@ import com.startsmake.llrisetabbardemo.R;
 /**
  * PopWindow → 发布商品
  */
-public class PublicGoodsActivity extends AppCompatActivity implements View.OnClickListener {
+public class PublishGoodsActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_public_goods);
+        setContentView(R.layout.activity_publish_goods);
         initTitle();
         setClickListener();
     }
@@ -32,8 +32,8 @@ public class PublicGoodsActivity extends AppCompatActivity implements View.OnCli
         findViewById(R.id.add_img_left).setOnClickListener(this);
         findViewById(R.id.add_img_middle).setOnClickListener(this);
         findViewById(R.id.add_img_right).setOnClickListener(this);
-        findViewById(R.id.checkbox_public_goods).setOnClickListener(this);
-        findViewById(R.id.btn_public).setOnClickListener(this);
+        findViewById(R.id.checkbox_publish_goods).setOnClickListener(this);
+        findViewById(R.id.btn_publish).setOnClickListener(this);
         findViewById(R.id.btn_cancel).setOnClickListener(this);
     }
 
@@ -62,9 +62,9 @@ public class PublicGoodsActivity extends AppCompatActivity implements View.OnCli
                 break;
             case R.id.add_img_right:
                 break;
-            case R.id.checkbox_public_goods:
+            case R.id.checkbox_publish_goods:
                 break;
-            case R.id.btn_public:
+            case R.id.btn_publish:
                 break;
             case R.id.btn_cancel:
                 break;
@@ -110,15 +110,15 @@ public class PublicGoodsActivity extends AppCompatActivity implements View.OnCli
                 //邮编
                 String code = citySelected[3];
 
-                TextView textCity = (TextView) findViewById(R.id.text_public_city);
-                TextView textArea = (TextView) findViewById(R.id.text_public_area);
+                TextView textCity = (TextView) findViewById(R.id.text_publish_city);
+                TextView textArea = (TextView) findViewById(R.id.text_publish_area);
                 textCity.setText(city);
                 textArea.setText(district);
             }
 
             @Override
             public void onCancel() {
-                Toast.makeText(PublicGoodsActivity.this, "已取消", Toast.LENGTH_SHORT).show();
+                Toast.makeText(PublishGoodsActivity.this, "已取消", Toast.LENGTH_SHORT).show();
             }
         });
     }

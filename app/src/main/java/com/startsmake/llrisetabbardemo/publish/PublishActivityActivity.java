@@ -15,12 +15,12 @@ import java.util.Calendar;
 /**
  * PopWindow → 发布活动
  */
-public class PublicActivityActivity extends AppCompatActivity {
+public class PublishActivityActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_public_activity);
+        setContentView(R.layout.activity_publish_activity);
         TextView textTitle = (TextView) findViewById(R.id.text_title);
         initTitle(textTitle);
         setTime();
@@ -47,7 +47,7 @@ public class PublicActivityActivity extends AppCompatActivity {
         textTimeStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatePickerDialog datePickerStart = new DatePickerDialog(PublicActivityActivity.this, new DatePickerDialog.OnDateSetListener() {
+                DatePickerDialog datePickerStart = new DatePickerDialog(PublishActivityActivity.this, new DatePickerDialog.OnDateSetListener() {
                     //选择完日期后会调用该回调函数
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int monthOfYear, int dayOfMonth) {
@@ -64,7 +64,7 @@ public class PublicActivityActivity extends AppCompatActivity {
         textTimeOver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatePickerDialog datePickerOver = new DatePickerDialog(PublicActivityActivity.this, new DatePickerDialog.OnDateSetListener() {
+                DatePickerDialog datePickerOver = new DatePickerDialog(PublishActivityActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int monthOfYear, int dayOfMonth) {
                         textTimeOver.setText(year + "年" + (monthOfYear + 1) + "月" + dayOfMonth + "日");

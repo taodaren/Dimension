@@ -162,7 +162,7 @@ public class PublishPopWindow extends PopupWindow implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.commodity_window:
-                Intent intentGoods = new Intent(mContext, PublicGoodsActivity.class);
+                Intent intentGoods = new Intent(mContext, PublishGoodsActivity.class);
                 mContext.startActivity(intentGoods);
                 break;
             case R.id.posts_window:
@@ -171,7 +171,7 @@ public class PublishPopWindow extends PopupWindow implements View.OnClickListene
                 break;
             case R.id.activity_window:
 //                Toast.makeText(mContext, "activity_window", Toast.LENGTH_SHORT).show();
-                Intent intentActivity = new Intent(mContext, PublicActivityActivity.class);
+                Intent intentActivity = new Intent(mContext, PublishActivityActivity.class);
                 mContext.startActivity(intentActivity);
                 break;
             case R.id.ll_close:
