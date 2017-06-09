@@ -32,11 +32,15 @@
         <activity android:name=".activity.HomeMsgActivity" />
         <activity android:name=".activity.SortActivity" />
         <activity android:name=".activity.MineDrawerActivity" />
-        <activity android:name=".publish.PublishGoodsActivity" />
+        <activity
+            android:name=".publish.PublishGoodsActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
             android:name=".publish.PublishActivityActivity"
             android:windowSoftInputMode="adjustPan|stateHidden" />
-        <activity android:name=".publish.PublishPostsActivity"></activity>
+        <activity
+            android:name=".publish.PublishPostsActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
     </application>
 
 </manifest>

@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.startsmake.llrisetabbardemo.R;
 import com.startsmake.llrisetabbardemo.publish.utils.KickBackAnimator;
@@ -40,7 +39,7 @@ public class PublishPopWindow extends PopupWindow implements View.OnClickListene
     }
 
     /**
-     * popwindow 相关初始化操作
+     * popWindow 相关初始化操作
      */
     public void showMoreWindow(View anchor) {
         LayoutInflater inflater = (LayoutInflater) mContext
@@ -166,11 +165,10 @@ public class PublishPopWindow extends PopupWindow implements View.OnClickListene
                 mContext.startActivity(intentGoods);
                 break;
             case R.id.posts_window:
-                Toast.makeText(mContext, "posts_window", Toast.LENGTH_SHORT).show();
-
+                Intent intentPosts = new Intent(mContext, PublishPostsActivity.class);
+                mContext.startActivity(intentPosts);
                 break;
             case R.id.activity_window:
-//                Toast.makeText(mContext, "activity_window", Toast.LENGTH_SHORT).show();
                 Intent intentActivity = new Intent(mContext, PublishActivityActivity.class);
                 mContext.startActivity(intentActivity);
                 break;

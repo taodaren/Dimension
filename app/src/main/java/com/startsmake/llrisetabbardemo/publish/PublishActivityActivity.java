@@ -21,8 +21,7 @@ public class PublishActivityActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_publish_activity);
-        TextView textTitle = (TextView) findViewById(R.id.text_title);
-        initTitle(textTitle);
+        initTitle();
         setTime();
     }
 
@@ -75,7 +74,8 @@ public class PublishActivityActivity extends AppCompatActivity {
         });
     }
 
-    private void initTitle(TextView textTitle) {
+    private void initTitle() {
+        TextView textTitle = (TextView) findViewById(R.id.text_title);
         textTitle.setText("发布活动");
         ImageView imgBack = (ImageView) findViewById(R.id.img_back);
         imgBack.setVisibility(View.VISIBLE);
