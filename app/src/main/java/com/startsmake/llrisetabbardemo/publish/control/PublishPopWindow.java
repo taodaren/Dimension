@@ -1,4 +1,4 @@
-package com.startsmake.llrisetabbardemo.publish;
+package com.startsmake.llrisetabbardemo.publish.control;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;

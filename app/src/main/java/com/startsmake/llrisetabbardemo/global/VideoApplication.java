@@ -7,7 +7,7 @@ import com.yixia.camera.VCamera;
 
 import java.io.File;
 
-public class App extends Application {
+public class VideoApplication extends Application {
     public static String VIDEO_PATH = "/sdcard/video_cache/";
 
     @Override
@@ -21,10 +21,10 @@ public class App extends Application {
         //设置视频缓存路径
         VCamera.setVideoCachePath(VIDEO_PATH);
 
-        // 开启log输出,ffmpeg输出到logcat
+        //开启log输出,ffmpeg输出到logcat
         VCamera.setDebugMode(true);
 
-        // 初始化拍摄SDK，必须
+        //初始化拍摄SDK，必须
         VCamera.initialize(this);
 
         File dir = getApplicationContext().getDir("l  ibs", Context.MODE_PRIVATE);

@@ -1,30 +1,25 @@
-package com.startsmake.llrisetabbardemo.activity;
+package com.startsmake.llrisetabbardemo.publish.control;
 
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.startsmake.llrisetabbardemo.R;
 
-/**
- * 首页 → 消息
- */
-public class HomeMsgActivity extends AppCompatActivity {
+public class PublishPostsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_msg);
+        setContentView(R.layout.activity_publish_posts);
         initTitle();
     }
 
     private void initTitle() {
         TextView textTitle = (TextView) findViewById(R.id.text_title);
-        textTitle.setText("消息");
-
+        textTitle.setText("发帖");
         ImageView imgBack = (ImageView) findViewById(R.id.img_back);
         imgBack.setVisibility(View.VISIBLE);
         imgBack.setOnClickListener(new View.OnClickListener() {

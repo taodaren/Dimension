@@ -1,4 +1,4 @@
-package com.startsmake.llrisetabbardemo.fragment;
+package com.startsmake.llrisetabbardemo.secondhand;
 
 import android.app.Fragment;
 import android.content.Intent;
@@ -16,7 +16,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.startsmake.llrisetabbardemo.R;
-import com.startsmake.llrisetabbardemo.activity.SortActivity;
 
 /**
  * 二手交易

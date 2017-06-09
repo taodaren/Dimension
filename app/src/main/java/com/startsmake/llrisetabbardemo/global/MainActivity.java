@@ -1,15 +1,15 @@
-package com.startsmake.llrisetabbardemo.activity;
+package com.startsmake.llrisetabbardemo.global;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.startsmake.llrisetabbardemo.R;
-import com.startsmake.llrisetabbardemo.fragment.HomeFragment;
-import com.startsmake.llrisetabbardemo.fragment.LeagueFragment;
-import com.startsmake.llrisetabbardemo.fragment.SecondhandFragment;
-import com.startsmake.llrisetabbardemo.fragment.WordFragment;
-import com.startsmake.llrisetabbardemo.publish.PublishPopWindow;
+import com.startsmake.llrisetabbardemo.home.HomeFragment;
+import com.startsmake.llrisetabbardemo.league.LeagueFragment;
+import com.startsmake.llrisetabbardemo.secondhand.SecondhandFragment;
+import com.startsmake.llrisetabbardemo.word.WordFragment;
+import com.startsmake.llrisetabbardemo.publish.control.PublishPopWindow;
 import com.startsmake.mainnavigatetabbar.widget.MainNavigateTabBar;
 
 public class MainActivity extends AppCompatActivity {

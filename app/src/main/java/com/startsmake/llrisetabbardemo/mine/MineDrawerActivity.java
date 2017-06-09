@@ -1,4 +1,4 @@
-package com.startsmake.llrisetabbardemo.activity;
+package com.startsmake.llrisetabbardemo.mine;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

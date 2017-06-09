@@ -1,26 +1,26 @@
-package com.startsmake.llrisetabbardemo.publish;
+package com.startsmake.llrisetabbardemo.secondhand;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.startsmake.llrisetabbardemo.R;
 
-public class PublishPostsActivity extends AppCompatActivity {
+/**
+ * 二手交易 → 筛选
+ */
+public class SortActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_publish_posts);
-        initTitle();
-    }
+        setContentView(R.layout.activity_sort);
 
-    private void initTitle() {
         TextView textTitle = (TextView) findViewById(R.id.text_title);
-        textTitle.setText("发帖");
-        ImageView imgBack = (ImageView) findViewById(R.id.img_back);
+        textTitle.setText("分类");
+        final ImageView imgBack = (ImageView) findViewById(R.id.img_back);
         imgBack.setVisibility(View.VISIBLE);
         imgBack.setOnClickListener(new View.OnClickListener() {
             @Override

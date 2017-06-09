@@ -1,4 +1,4 @@
-package com.startsmake.llrisetabbardemo.publish;
+package com.startsmake.llrisetabbardemo.publish.control;
 
 import android.content.Intent;
 import android.graphics.Color;

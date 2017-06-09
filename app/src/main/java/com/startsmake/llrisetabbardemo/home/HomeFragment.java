@@ -1,4 +1,4 @@
-package com.startsmake.llrisetabbardemo.fragment;
+package com.startsmake.llrisetabbardemo.home;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -19,8 +19,6 @@ import android.widget.Toast;
 
 import com.lljjcoder.citypickerview.widget.CityPicker;
 import com.startsmake.llrisetabbardemo.R;
-import com.startsmake.llrisetabbardemo.activity.HomeMsgActivity;
-import com.startsmake.llrisetabbardemo.activity.HomeQRCodeActivity;
 
 /**
  * 首页

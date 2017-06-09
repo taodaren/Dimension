@@ -1,4 +1,4 @@
-package com.startsmake.llrisetabbardemo.activity;
+package com.startsmake.llrisetabbardemo.home;
 
 import android.app.Activity;
 import android.content.Intent;

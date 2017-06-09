@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".global.App"
+        android:name=".global.VideoApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="false"
         android:icon="@mipmap/icon_dimen"
@@ -20,7 +20,7 @@
         <!-- 声明Activity时加上：android:windowSoftInputMode="stateHidden" -->
         <!-- 解决软键盘将布局顶起方法：android:windowSoftInputMode="adjustPan|stateHidden" -->
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".global.MainActivity"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,18 +28,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.HomeQRCodeActivity" />
-        <activity android:name=".activity.HomeMsgActivity" />
-        <activity android:name=".activity.SortActivity" />
-        <activity android:name=".activity.MineDrawerActivity" />
+        <activity android:name=".home.HomeQRCodeActivity" />
+        <activity android:name=".home.HomeMsgActivity" />
+        <activity android:name=".secondhand.SortActivity" />
+        <activity android:name=".mine.MineDrawerActivity" />
         <activity
-            android:name=".publish.PublishGoodsActivity"
+            android:name=".publish.control.PublishGoodsActivity"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name=".publish.PublishActivityActivity"
+            android:name=".publish.control.PublishActivityActivity"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name=".publish.PublishPostsActivity"
+            android:name=".publish.control.PublishPostsActivity"
             android:windowSoftInputMode="adjustPan|stateHidden" />
     </application>
 
