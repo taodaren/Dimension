@@ -62,17 +62,18 @@
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:id="@+id/radioButton"
+                        android:id="@+id/rbtn_activity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
+                        android:checked="true"
                         android:text="活动" />
 
                     <RadioButton
-                        android:id="@+id/radioButton2"
+                        android:id="@+id/rbtn_works"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
+                        android:layout_marginLeft="20dp"
                         android:text="作品" />
                 </RadioGroup>
 
@@ -92,6 +93,13 @@
                     android:text="活动开始时间："
                     android:textSize="15sp" />
 
+                <TextView
+                    android:id="@+id/text_time_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2017年1月1日"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -108,6 +116,13 @@
                     android:text="活动结束时间："
                     android:textSize="15sp" />
 
+                <TextView
+                    android:id="@+id/text_time_over"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2017年12月31日"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -125,6 +140,37 @@
                     android:text="作品是否公开："
                     android:textSize="15sp" />
 
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:checked="true"
+                        android:text="是" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(社团外可见)"
+                        android:textSize="10sp" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="否" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(仅社团成员可见)"
+                        android:textSize="10sp" />
+                </RadioGroup>
             </LinearLayout>
 
             <LinearLayout
@@ -160,6 +206,7 @@
                     android:id="@+id/radioButton3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:checked="true"
                     android:text="全体成员" />
 
                 <RadioButton
