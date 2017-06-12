@@ -3,6 +3,7 @@ package com.startsmake.llrisetabbardemo.global;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Toast;
 
 import com.startsmake.llrisetabbardemo.R;
 import com.startsmake.llrisetabbardemo.home.HomeFragment;
@@ -12,7 +13,7 @@ import com.startsmake.llrisetabbardemo.word.WordFragment;
 import com.startsmake.llrisetabbardemo.publish.control.PublishPopWindow;
 import com.startsmake.mainnavigatetabbar.widget.MainNavigateTabBar;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG_PAGE_HOME = "首页";
     private static final String TAG_PAGE_WORLD = "社区";
     private static final String TAG_PAGE_POST = "发布";
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initTabBar(savedInstanceState);
+        initClickListener();
     }
 
     private void initTabBar(Bundle savedInstanceState) {
@@ -52,11 +54,92 @@ public class MainActivity extends AppCompatActivity {
         mTabBar.onSaveInstanceState(outState);
     }
 
+    private void initClickListener() {
+        findViewById(R.id.mine_avatar).setOnClickListener(this);
+        findViewById(R.id.mine_qr_code).setOnClickListener(this);
+
+        findViewById(R.id.mine_praise).setOnClickListener(this);
+        findViewById(R.id.mine_follow).setOnClickListener(this);
+        findViewById(R.id.mine_fans).setOnClickListener(this);
+
+        findViewById(R.id.mine_column).setOnClickListener(this);
+        findViewById(R.id.mine_word).setOnClickListener(this);
+        findViewById(R.id.mine_league).setOnClickListener(this);
+        findViewById(R.id.mine_money).setOnClickListener(this);
+
+        findViewById(R.id.mine_fa_huo).setOnClickListener(this);
+        findViewById(R.id.mine_shou_huo).setOnClickListener(this);
+        findViewById(R.id.mine_ping_jia).setOnClickListener(this);
+        findViewById(R.id.mine_tui_huo).setOnClickListener(this);
+        findViewById(R.id.mine_fa_bu).setOnClickListener(this);
+        findViewById(R.id.mine_mai_chu).setOnClickListener(this);
+        findViewById(R.id.mine_mai_dao).setOnClickListener(this);
+        findViewById(R.id.mine_zan_guo).setOnClickListener(this);
+    }
+
     /**
      * 首页 → 发布
      */
     public void onClickPublish(View v) {
         PublishPopWindow popWindow = new PublishPopWindow(MainActivity.this);
         popWindow.showMoreWindow(v);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.mine_avatar:
+                Toast.makeText(this, "avatar", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.mine_qr_code:
+                Toast.makeText(this, "qrCode", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.mine_praise:
+
+                break;
+            case R.id.mine_follow:
+
+                break;
+            case R.id.mine_fans:
+
+                break;
+            case R.id.mine_column:
+
+                break;
+            case R.id.mine_word:
+
+                break;
+            case R.id.mine_league:
+
+                break;
+            case R.id.mine_money:
+
+                break;
+            case R.id.mine_fa_huo:
+
+                break;
+            case R.id.mine_shou_huo:
+
+                break;
+            case R.id.mine_ping_jia:
+
+                break;
+            case R.id.mine_tui_huo:
+
+                break;
+            case R.id.mine_fa_bu:
+
+                break;
+            case R.id.mine_mai_chu:
+
+                break;
+            case R.id.mine_mai_dao:
+
+                break;
+            case R.id.mine_zan_guo:
+
+                break;
+            default:
+        }
     }
 }
