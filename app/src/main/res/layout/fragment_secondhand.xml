@@ -55,6 +55,6 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_margin="20dp"
-        android:background="@mipmap/ic_launcher"
+        android:background="@drawable/to_top"
         android:visibility="visible" />
 </RelativeLayout>
