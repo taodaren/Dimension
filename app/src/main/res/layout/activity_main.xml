@@ -10,7 +10,7 @@
     <!--左侧滑菜单栏-->
     <include
         layout="@layout/activity_mine_drawer"
-        android:layout_width="280dp"
+        android:layout_width="300dp"
         android:layout_height="match_parent"
         android:layout_gravity="start" />
 </android.support.v4.widget.DrawerLayout>

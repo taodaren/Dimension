@@ -55,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:src="@drawable/avatar" />
+            android:src="@drawable/mine_qr_code" />
     </LinearLayout>
 
     <LinearLayout
@@ -143,7 +143,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/avatar"
+            android:drawableTop="@drawable/mine_column"
             android:gravity="center_horizontal"
             android:text="我的专栏"
             android:textSize="15sp" />
@@ -153,7 +153,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/avatar"
+            android:drawableTop="@drawable/mine_word"
             android:gravity="center_horizontal"
             android:text="我的社区"
             android:textSize="15sp" />
@@ -163,7 +163,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/avatar"
+            android:drawableTop="@drawable/mine_league"
             android:gravity="center_horizontal"
             android:text="我的社团"
             android:textSize="15sp" />
@@ -173,7 +173,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/avatar"
+            android:drawableTop="@drawable/mine_money"
             android:gravity="center_horizontal"
             android:text="我的钱包"
             android:textSize="15sp" />
@@ -188,7 +188,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:src="@drawable/avatar" />
+            android:src="@drawable/bao_xiang" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -210,7 +210,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/avatar"
+            android:drawableTop="@drawable/mine_fa_huo"
             android:gravity="center_horizontal"
             android:text="待发货"
             android:textSize="13sp" />
@@ -220,7 +220,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/avatar"
+            android:drawableTop="@drawable/mine_shou_huo"
             android:gravity="center_horizontal"
             android:text="待收货"
             android:textSize="13sp" />
@@ -230,7 +230,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/avatar"
+            android:drawableTop="@drawable/mine_ping_jia"
             android:gravity="center_horizontal"
             android:text="待评价"
             android:textSize="13sp" />
@@ -240,7 +240,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/avatar"
+            android:drawableTop="@drawable/mine_tui_huo"
             android:gravity="center_horizontal"
             android:text="退货"
             android:textSize="13sp" />
@@ -258,7 +258,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/avatar"
+            android:drawableTop="@drawable/mine_fa_bu"
             android:gravity="center_horizontal"
             android:text="我发布的"
             android:textSize="13sp" />
@@ -268,7 +268,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/avatar"
+            android:drawableTop="@drawable/mine_mai_chu"
             android:gravity="center_horizontal"
             android:text="我卖出的"
             android:textSize="13sp" />
@@ -278,7 +278,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/avatar"
+            android:drawableTop="@drawable/mine_mai_dao"
             android:gravity="center_horizontal"
             android:text="我买到的"
             android:textSize="13sp" />
@@ -288,7 +288,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/avatar"
+            android:drawableTop="@drawable/mine_zan_guo"
             android:gravity="center_horizontal"
             android:text="我赞过的"
             android:textSize="13sp" />
