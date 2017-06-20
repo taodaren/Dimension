@@ -32,13 +32,6 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':mainnavigatetabbar')
     compile project(':smallvideo')
-
-    // -------------------- ZXing 二维码扫描依赖 ----------------------------
-    // -------------------- ZXing 二维码扫描依赖 ----------------------------
-
-    // -------------------- 以下几个库是为了方便编写演示案例添加进来的，集成到你自己项目时可以不依赖这些库 --------------------
-    // -------------------- 以上几个库是为了方便编写演示案例添加进来的，集成到你自己项目时可以不依赖这些库 --------------------
-
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'liji.library.dev:citypickerview:1.1.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
@@ -53,4 +46,5 @@ dependencies {
     compile 'io.reactivex:rxjava:1.1.6'
     compile 'io.reactivex:rxandroid:1.2.1'
     testCompile 'junit:junit:4.12'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
 }

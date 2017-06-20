@@ -95,49 +95,49 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(this, "qrCode", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.mine_praise:
-
+                Toast.makeText(this, "mine_praise", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.mine_follow:
-
+                Toast.makeText(this, "mine_follow", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.mine_fans:
-
+                Toast.makeText(this, "mine_fans", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.mine_column:
-
+                Toast.makeText(this, "mine_column", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.mine_word:
-
+                Toast.makeText(this, "mine_word", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.mine_league:
-
+                Toast.makeText(this, "mine_league", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.mine_money:
-
+                Toast.makeText(this, "mine_money", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.mine_fa_huo:
-
+                Toast.makeText(this, "mine_fa_huo", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.mine_shou_huo:
-
+                Toast.makeText(this, "mine_shou_huo", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.mine_ping_jia:
-
+                Toast.makeText(this, "mine_ping_jia", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.mine_tui_huo:
-
+                Toast.makeText(this, "mine_tui_huo", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.mine_fa_bu:
-
+                Toast.makeText(this, "mine_fa_bu", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.mine_mai_chu:
-
+                Toast.makeText(this, "mine_mai_chu", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.mine_mai_dao:
-
+                Toast.makeText(this, "mine_mai_dao", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.mine_zan_guo:
-
+                Toast.makeText(this, "mine_zan_guo", Toast.LENGTH_SHORT).show();
                 break;
             default:
         }
