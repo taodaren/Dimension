@@ -1,5 +1,6 @@
 package com.startsmake.llrisetabbardemo.home;
 
+import android.animation.LayoutTransition;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
@@ -14,11 +15,13 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lljjcoder.citypickerview.widget.CityPicker;
 import com.startsmake.llrisetabbardemo.R;
+import com.startsmake.llrisetabbardemo.global.GoTopScrollView;
 
 /**
  * 首页
@@ -30,6 +33,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         initTitle(view);
+        setBtnToTop(view, container);
         return view;
     }
 
@@ -137,4 +141,12 @@ public class HomeFragment extends Fragment {
         });
     }
 
+    private void setBtnToTop(View view, ViewGroup container) {
+        container = (RelativeLayout) view.findViewById(R.id.rl_home);
+        container.setLayoutTransition(new LayoutTransition());
+
+        ImageButton imgBtnTop = (ImageButton) view.findViewById(R.id.goto_top_home);
+        GoTopScrollView scrollView = (GoTopScrollView) view.findViewById(R.id.go_top_scroll_home);
+        scrollView.setScrollListener(imgBtnTop);
+    }
 }

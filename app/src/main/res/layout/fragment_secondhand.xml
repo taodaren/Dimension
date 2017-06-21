@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_secondhand"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -35,26 +36,28 @@
             android:textSize="20sp" />
     </LinearLayout>
 
-    <ScrollView
-        android:layout_below="@id/ll_title_hand"
+    <com.startsmake.llrisetabbardemo.global.GoTopScrollView
+        android:id="@+id/go_top_scroll_secondhand"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@id/ll_title_hand">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:src="@drawable/eg_secondhand" />
-    </ScrollView>
+    </com.startsmake.llrisetabbardemo.global.GoTopScrollView>
 
     <!-- 用于回到顶部 -->
     <ImageButton
-        android:id="@+id/img_to_top"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:id="@+id/goto_top_secondhand"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/to_top"
-        android:visibility="visible" />
+        android:visibility="gone" />
 </RelativeLayout>

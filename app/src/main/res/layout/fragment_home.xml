@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_home"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/ll_title_home"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@color/background"
@@ -18,9 +19,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:background="@color/background"
+            android:paddingBottom="10dp"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
-            android:paddingBottom="10dp"
             android:src="@drawable/title_mi" />
 
         <RelativeLayout
@@ -72,14 +73,28 @@
             android:textColor="@color/white" />
     </LinearLayout>
 
-    <ScrollView
+    <com.startsmake.llrisetabbardemo.global.GoTopScrollView
+        android:id="@+id/go_top_scroll_home"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@id/ll_title_home">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:src="@drawable/eg_home" />
-    </ScrollView>
-</LinearLayout>
+    </com.startsmake.llrisetabbardemo.global.GoTopScrollView>
+
+    <!-- 用于回到顶部 -->
+    <ImageButton
+        android:id="@+id/goto_top_home"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/to_top"
+        android:visibility="gone" />
+</RelativeLayout>

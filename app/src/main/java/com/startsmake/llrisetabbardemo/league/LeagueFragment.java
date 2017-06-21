@@ -1,5 +1,6 @@
 package com.startsmake.llrisetabbardemo.league;
 
+import android.animation.LayoutTransition;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,11 +10,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.startsmake.llrisetabbardemo.R;
+import com.startsmake.llrisetabbardemo.global.GoTopScrollView;
 
 /**
  * 社团
@@ -26,6 +30,7 @@ public class LeagueFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_league, container, false);
         initTitle(view);
         initShape(view);
+        setBtnToTop(view, container);
         return view;
     }
 
@@ -55,5 +60,14 @@ public class LeagueFragment extends Fragment {
 
         TextView textTitle = (TextView) view.findViewById(R.id.text_title_tab);
         textTitle.setText("社团");
+    }
+
+    private void setBtnToTop(View view, ViewGroup container) {
+        container = (RelativeLayout) view.findViewById(R.id.layout_league);
+        container.setLayoutTransition(new LayoutTransition());
+
+        ImageButton imgBtnTop = (ImageButton) view.findViewById(R.id.goto_top_league);
+        GoTopScrollView scrollView = (GoTopScrollView) view.findViewById(R.id.go_top_scroll_league);
+        scrollView.setScrollListener(imgBtnTop);
     }
 }
