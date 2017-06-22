@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">二次元</string>
+    <string name="app_name">OLACOS</string>
     <string name="title_activity_mi_drawer">MiDrawerActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
