@@ -21,11 +21,10 @@
 
             <include layout="@layout/layout_tab_shape" />
 
-            <ImageView
+            <WebView
+                android:id="@+id/web_word"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:src="@drawable/eg_word" />
+                android:layout_height="wrap_content" />
         </LinearLayout>
     </com.startsmake.llrisetabbardemo.global.GoTopScrollView>
 
