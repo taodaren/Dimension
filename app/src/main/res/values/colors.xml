@@ -9,6 +9,7 @@
     <color name="colorA0">#a0a0a0</color>
     <color name="colorF2">#f2f2f2</color>
     <color name="background">#f7c936</color>
+    <color name="loginBg">#f2f2f2</color>
     <color name="imgBg">#f1f5f8</color>
 
     <color name="comui_tab_text_color">#ff333333</color>

@@ -42,6 +42,12 @@
         <activity
             android:name=".publish.control.PublishPostsActivity"
             android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".global.LoginActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".global.RegisterActivity"
+            android:windowSoftInputMode="stateHidden" />
     </application>
 
 </manifest>

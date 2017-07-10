@@ -1,5 +1,6 @@
 package com.startsmake.llrisetabbardemo.global;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -8,9 +9,9 @@ import android.widget.Toast;
 import com.startsmake.llrisetabbardemo.R;
 import com.startsmake.llrisetabbardemo.home.HomeFragment;
 import com.startsmake.llrisetabbardemo.league.LeagueFragment;
+import com.startsmake.llrisetabbardemo.publish.control.PublishPopWindow;
 import com.startsmake.llrisetabbardemo.secondhand.SecondhandFragment;
 import com.startsmake.llrisetabbardemo.word.WordFragment;
-import com.startsmake.llrisetabbardemo.publish.control.PublishPopWindow;
 import com.startsmake.mainnavigatetabbar.widget.MainNavigateTabBar;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -55,8 +56,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initClickListener() {
+//        findViewById(R.id.mine_qr_code).setOnClickListener(this);
         findViewById(R.id.mine_avatar).setOnClickListener(this);
-        findViewById(R.id.mine_qr_code).setOnClickListener(this);
+        findViewById(R.id.mine_set).setOnClickListener(this);
 
         findViewById(R.id.mine_praise).setOnClickListener(this);
         findViewById(R.id.mine_follow).setOnClickListener(this);
@@ -88,11 +90,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+//            case R.id.mine_qr_code:
+//                Toast.makeText(this, "mine_qr_code", Toast.LENGTH_SHORT).show();
+//                break;
             case R.id.mine_avatar:
                 Toast.makeText(this, "avatar", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.mine_qr_code:
-                Toast.makeText(this, "qrCode", Toast.LENGTH_SHORT).show();
+            case R.id.mine_set:
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
                 break;
             case R.id.mine_praise:
                 Toast.makeText(this, "mine_praise", Toast.LENGTH_SHORT).show();

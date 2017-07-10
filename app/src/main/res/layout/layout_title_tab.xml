@@ -10,15 +10,30 @@
         android:id="@+id/img_mi_tab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
+        android:padding="10dp"
         android:src="@drawable/title_mi" />
 
     <TextView
         android:id="@+id/text_title_tab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:padding="10dp"
         android:text="标题栏"
         android:textColor="@color/white"
-        android:textSize="18sp" />
+        android:textSize="20sp"
+        android:layout_alignBottom="@+id/img_mi_tab"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/text_title_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginRight="8dp"
+        android:padding="10dp"
+        android:text="右侧"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:visibility="gone" />
 </RelativeLayout>
