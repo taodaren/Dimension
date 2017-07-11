@@ -19,7 +19,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.startsmake.llrisetabbardemo.R;
-import com.startsmake.llrisetabbardemo.global.GoTopScrollView;
+import com.startsmake.llrisetabbardemo.global.util.GoTopScrollView;
+import com.startsmake.llrisetabbardemo.global.internet.WebUrl;
 
 /**
  * 社区
@@ -41,7 +42,7 @@ public class WordFragment extends Fragment {
         WebView webView = (WebView) view.findViewById(R.id.web_word);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("http://192.168.1.145/two/pages/world.html");
+        webView.loadUrl(WebUrl.TAB_WORD);
     }
 
     private void initShape(View view) {

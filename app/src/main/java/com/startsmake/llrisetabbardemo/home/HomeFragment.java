@@ -23,7 +23,8 @@ import android.widget.Toast;
 
 import com.lljjcoder.citypickerview.widget.CityPicker;
 import com.startsmake.llrisetabbardemo.R;
-import com.startsmake.llrisetabbardemo.global.GoTopScrollView;
+import com.startsmake.llrisetabbardemo.global.util.GoTopScrollView;
+import com.startsmake.llrisetabbardemo.global.internet.WebUrl;
 
 /**
  * 首页
@@ -44,7 +45,7 @@ public class HomeFragment extends Fragment {
         WebView webView = (WebView) view.findViewById(R.id.web_home);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("http://192.168.1.145/two/pages/index.html");
+        webView.loadUrl(WebUrl.TAB_HOME);
     }
 
     private void initTitle(View view) {

@@ -8,26 +8,38 @@
         android:id="@+id/layout_league"
         layout="@layout/layout_title_tab" />
 
-    <com.startsmake.llrisetabbardemo.global.GoTopScrollView
+    <com.startsmake.llrisetabbardemo.global.util.GoTopScrollView
         android:id="@+id/go_top_scroll_league"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/layout_league">
 
-        <LinearLayout
+        <WebView
+            android:id="@+id/web_league"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content" />
+    </com.startsmake.llrisetabbardemo.global.util.GoTopScrollView>
 
-            <include layout="@layout/layout_tab_shape" />
+    <!--<com.startsmake.llrisetabbardemo.global.util.GoTopScrollView-->
+        <!--android:id="@+id/go_top_scroll_league"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_below="@id/layout_league">-->
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:src="@drawable/eg_league" />
-        </LinearLayout>
-    </com.startsmake.llrisetabbardemo.global.GoTopScrollView>
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<include layout="@layout/layout_tab_shape" />-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:adjustViewBounds="true"-->
+                <!--android:src="@drawable/eg_league" />-->
+        <!--</LinearLayout>-->
+    <!--</com.startsmake.llrisetabbardemo.global.util.GoTopScrollView>-->
 
     <!-- 用于回到顶部 -->
     <ImageButton

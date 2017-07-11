@@ -9,15 +9,16 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.startsmake.llrisetabbardemo.R;
-import com.startsmake.llrisetabbardemo.global.GoTopScrollView;
+import com.startsmake.llrisetabbardemo.global.util.GoTopScrollView;
+import com.startsmake.llrisetabbardemo.global.internet.WebUrl;
 
 /**
  * 社团
@@ -29,23 +30,31 @@ public class LeagueFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_league, container, false);
         initTitle(view);
-        initShape(view);
+        initWebView(view);
+//        initShape(view);
         setBtnToTop(view, container);
         return view;
     }
 
-    private void initShape(View view) {
-        EditText editFind = (EditText) view.findViewById(R.id.edit_tab_shape);
-        editFind.setHint("热帖搜索");
-
-        ImageView imgFind = (ImageView) view.findViewById(R.id.img_tab_shape);
-        imgFind.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getContext(), "跳转到搜索界面", Toast.LENGTH_SHORT).show();
-            }
-        });
+    private void initWebView(View view) {
+        WebView webView = (WebView) view.findViewById(R.id.web_league);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.setWebViewClient(new WebViewClient());
+        webView.loadUrl(WebUrl.TAB_LEAGUE);
     }
+
+//    private void initShape(View view) {
+//        EditText editFind = (EditText) view.findViewById(R.id.edit_tab_shape);
+//        editFind.setHint("热帖搜索");
+//
+//        ImageView imgFind = (ImageView) view.findViewById(R.id.img_tab_shape);
+//        imgFind.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(getContext(), "跳转到搜索界面", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
 
     private void initTitle(View view) {
         ImageView imgMiTab = (ImageView) view.findViewById(R.id.img_mi_tab);

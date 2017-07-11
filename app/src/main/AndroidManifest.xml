@@ -21,7 +21,7 @@
         <!-- 声明Activity时加上：android:windowSoftInputMode="stateHidden" -->
         <!-- 解决软键盘将布局顶起方法：android:windowSoftInputMode="adjustPan|stateHidden" -->
         <activity
-            android:name=".global.MainActivity"
+            android:name=".global.control.MainActivity"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,10 +43,10 @@
             android:name=".publish.control.PublishPostsActivity"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name=".global.LoginActivity"
+            android:name=".global.control.LoginActivity"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".global.RegisterActivity"
+            android:name=".global.control.RegisterActivity"
             android:windowSoftInputMode="stateHidden" />
     </application>
 

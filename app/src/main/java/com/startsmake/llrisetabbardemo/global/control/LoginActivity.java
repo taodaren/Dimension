@@ -1,4 +1,4 @@
-package com.startsmake.llrisetabbardemo.global;
+package com.startsmake.llrisetabbardemo.global.control;
 
 import android.content.Intent;
 import android.os.Bundle;

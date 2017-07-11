@@ -18,7 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.startsmake.llrisetabbardemo.R;
-import com.startsmake.llrisetabbardemo.global.GoTopScrollView;
+import com.startsmake.llrisetabbardemo.global.util.GoTopScrollView;
 
 /**
  * 二手交易

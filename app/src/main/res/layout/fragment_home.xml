@@ -73,7 +73,7 @@
             android:textColor="@color/white" />
     </LinearLayout>
 
-    <com.startsmake.llrisetabbardemo.global.GoTopScrollView
+    <com.startsmake.llrisetabbardemo.global.util.GoTopScrollView
         android:id="@+id/go_top_scroll_home"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -83,7 +83,7 @@
             android:id="@+id/web_home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-    </com.startsmake.llrisetabbardemo.global.GoTopScrollView>
+    </com.startsmake.llrisetabbardemo.global.util.GoTopScrollView>
 
     <!-- 用于回到顶部 -->
     <ImageButton
