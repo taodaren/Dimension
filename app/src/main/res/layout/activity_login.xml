@@ -136,20 +136,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:drawableTop="@mipmap/ic_launcher"
+                    android:drawableTop="@drawable/login_wei_xin"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="微信" />
+                    android:text="微信"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/text_qq"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
-                    android:drawableTop="@mipmap/ic_launcher"
+                    android:drawableTop="@drawable/login_qq"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="QQ" />
+                    android:text="QQ"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/text_wei_bo"
@@ -157,10 +160,11 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="10dp"
-                    android:drawableTop="@mipmap/ic_launcher"
+                    android:drawableTop="@drawable/login_wei_bo"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="微博" />
+                    android:text="微博"
+                    android:textSize="18sp" />
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>
