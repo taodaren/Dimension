@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,19 +12,18 @@ import com.startsmake.llrisetabbardemo.R;
 import com.startsmake.llrisetabbardemo.global.bean.RegisterCodeBean;
 import com.startsmake.llrisetabbardemo.global.util.HttpMethods;
 
-import java.util.List;
-
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
+import rx.Observer;
 
 public class RegisterActivity extends AppCompatActivity {
     private static final String TAG = "RegisterActivity";
+    private EditText editAccount, editPhone, editPhoneCode, editPassword, editConfirmPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         setTitle();
+        setEditText();
         setClickListener();
     }
 
@@ -37,12 +37,20 @@ public class RegisterActivity extends AppCompatActivity {
         textTitle.setText("注册");
     }
 
+    private void setEditText() {
+        editAccount = (EditText) findViewById(R.id.edit_account_register);
+        editPhone = (EditText) findViewById(R.id.edit_phone_register);
+        editPhoneCode = (EditText) findViewById(R.id.edit_phone_code);
+        editPassword = (EditText) findViewById(R.id.edit_password_register);
+        editConfirmPassword = (EditText) findViewById(R.id.edit_confirm_password_register);
+    }
+
     private void setClickListener() {
         //获取验证码
         findViewById(R.id.btn_get_code).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getRegisterCodeData();
+                getRegisterCodeData(String.valueOf(editPhone.getText()));
             }
         });
         //注册完成
@@ -54,31 +62,22 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
-    private void getRegisterCodeData() {
+    private void getRegisterCodeData(String phoneNum) {
         HttpMethods.getInstance().getRegisterCode(new Observer<RegisterCodeBean>() {
-            Disposable d;
-
             @Override
-            public void onSubscribe(Disposable d) {
-                this.d = d;
-            }
-
-            @Override
-            public void onNext(RegisterCodeBean registerCodeBean) {
-                Log.e(TAG, "onNext: 获取数据完成" + registerCodeBean);
+            public void onCompleted() {
+                Log.d(TAG, "onCompleted");
             }
 
             @Override
             public void onError(Throwable e) {
-                Log.d(TAG, "onError: " + e.toString());
-                d.dispose();
+                Log.d(TAG, "onError: " + e.getMessage());
             }
 
             @Override
-            public void onComplete() {
-                Log.e(TAG, "onComplete:");
-                d.dispose();
+            public void onNext(RegisterCodeBean registerCodeBean) {
+                Log.d(TAG, "onNext: bean:" + registerCodeBean);
             }
-        });
+        }, phoneNum);
     }
 }

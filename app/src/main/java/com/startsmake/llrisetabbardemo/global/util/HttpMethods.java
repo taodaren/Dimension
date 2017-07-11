@@ -4,20 +4,21 @@ import com.startsmake.llrisetabbardemo.global.bean.RegisterCodeBean;
 import com.startsmake.llrisetabbardemo.global.internet.ApiService;
 import com.startsmake.llrisetabbardemo.global.internet.I;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import io.reactivex.Observer;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+import rx.Observer;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 
 public class HttpMethods {
     private static final int TIME_OUT = 4;
+    private volatile static HttpMethods instance;
+
     private Retrofit retrofit;
     private ApiService apiService;
 
@@ -38,23 +39,26 @@ public class HttpMethods {
                 .baseUrl(I.BASE_URL)
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
         apiService = retrofit.create(ApiService.class);
 
     }
 
-    private static class sinalInstance {
-        public static final HttpMethods instance = new HttpMethods();
-    }
-
     public static HttpMethods getInstance() {
-        return sinalInstance.instance;
+        if (instance == null) {
+            synchronized (HttpMethods.class) {
+                if (instance == null) {
+                    instance = new HttpMethods();
+                }
+            }
+        }
+        return instance;
     }
 
-    public void getRegisterCode(Observer<RegisterCodeBean> observer) {
+    public void getRegisterCode(Observer<RegisterCodeBean> observer, String phoneNum) {
 
-        apiService.getData()
+        apiService.getData(phoneNum)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
