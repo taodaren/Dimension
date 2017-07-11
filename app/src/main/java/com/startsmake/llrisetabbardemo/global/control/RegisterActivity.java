@@ -11,10 +11,8 @@ import com.startsmake.llrisetabbardemo.R;
 import com.startsmake.llrisetabbardemo.global.bean.RegisterCodeBean;
 import com.startsmake.llrisetabbardemo.global.util.HttpMethods;
 
-import java.util.List;
+import rx.Observer;
 
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
 
 public class RegisterActivity extends AppCompatActivity {
     private static final String TAG = "RegisterActivity";
@@ -56,29 +54,20 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void getRegisterCodeData() {
         HttpMethods.getInstance().getRegisterCode(new Observer<RegisterCodeBean>() {
-            Disposable d;
-
             @Override
-            public void onSubscribe(Disposable d) {
-                this.d = d;
-            }
-
-            @Override
-            public void onNext(RegisterCodeBean registerCodeBean) {
-                Log.e(TAG, "onNext: 获取数据完成" + registerCodeBean);
+            public void onCompleted() {
+                Log.d("xns", "onCompleted");
             }
 
             @Override
             public void onError(Throwable e) {
-                Log.d(TAG, "onError: " + e.toString());
-                d.dispose();
+                Log.e("xns", "error:" + e.getMessage());
             }
 
             @Override
-            public void onComplete() {
-                Log.e(TAG, "onComplete:");
-                d.dispose();
+            public void onNext(RegisterCodeBean registerCodeBean) {
+                Log.d("xns", "bean:" + registerCodeBean);
             }
-        });
+        }, "18641264225");
     }
 }
