@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.startsmake.llrisetabbardemo">
+    package="com.olacos.kunyu">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -18,7 +18,7 @@
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
 
     <application
-        android:name=".global.App"
+        android:name="com.olacos.kunyu.global.App"
         android:allowBackup="true"
         android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_olacos"
@@ -31,7 +31,7 @@
         <!-- 声明Activity时加上：android:windowSoftInputMode="stateHidden" -->
         <!-- 解决软键盘将布局顶起方法：android:windowSoftInputMode="adjustPan|stateHidden" -->
         <activity
-            android:name=".global.control.MainActivity"
+            android:name="com.olacos.kunyu.global.control.MainActivity"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,27 +39,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".home.HomeQRCodeActivity" />
-        <activity android:name=".home.HomeMsgActivity" />
-        <activity android:name=".secondhand.SortActivity" />
-        <activity android:name=".mine.MineDrawerActivity" />
+        <activity android:name="com.olacos.kunyu.home.HomeQRCodeActivity" />
+        <activity android:name="com.olacos.kunyu.home.HomeMsgActivity" />
+        <activity android:name="com.olacos.kunyu.secondhand.SortActivity" />
+        <activity android:name="com.olacos.kunyu.mine.MineDrawerActivity" />
         <activity
-            android:name=".publish.control.PublishGoodsActivity"
+            android:name="com.olacos.kunyu.publish.control.PublishGoodsActivity"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name=".publish.control.PublishActivityActivity"
+            android:name="com.olacos.kunyu.publish.control.PublishActivityActivity"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name=".publish.control.PublishPostsActivity"
+            android:name="com.olacos.kunyu.publish.control.PublishPostsActivity"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name=".global.control.LoginActivity"
+            android:name="com.olacos.kunyu.global.control.LoginActivity"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".global.control.RegisterActivity"
+            android:name="com.olacos.kunyu.global.control.RegisterActivity"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".WBShareActivity"
+            android:name="com.olacos.kunyu.WBShareActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -68,7 +68,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".wxapi.WXEntryActivity"
+            android:name="com.olacos.kunyu.wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:screenOrientation="portrait"

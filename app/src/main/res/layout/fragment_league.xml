@@ -8,7 +8,7 @@
         android:id="@+id/layout_league"
         layout="@layout/layout_title_tab" />
 
-    <com.startsmake.llrisetabbardemo.global.util.GoTopScrollView
+    <com.olacos.kunyu.global.util.GoTopScrollView
         android:id="@+id/go_top_scroll_league"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,9 +18,9 @@
             android:id="@+id/web_league"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-    </com.startsmake.llrisetabbardemo.global.util.GoTopScrollView>
+    </com.olacos.kunyu.global.util.GoTopScrollView>
 
-    <!--<com.startsmake.llrisetabbardemo.global.util.GoTopScrollView-->
+    <!--<GoTopScrollView-->
         <!--android:id="@+id/go_top_scroll_league"-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent"-->
@@ -39,7 +39,7 @@
                 <!--android:adjustViewBounds="true"-->
                 <!--android:src="@drawable/eg_league" />-->
         <!--</LinearLayout>-->
-    <!--</com.startsmake.llrisetabbardemo.global.util.GoTopScrollView>-->
+    <!--</GoTopScrollView>-->
 
     <!-- 用于回到顶部 -->
     <ImageButton

@@ -36,7 +36,7 @@
             android:textSize="20sp" />
     </LinearLayout>
 
-    <com.startsmake.llrisetabbardemo.global.util.GoTopScrollView
+    <com.olacos.kunyu.global.util.GoTopScrollView
         android:id="@+id/go_top_scroll_secondhand"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:src="@drawable/eg_secondhand" />
-    </com.startsmake.llrisetabbardemo.global.util.GoTopScrollView>
+    </com.olacos.kunyu.global.util.GoTopScrollView>
 
     <!-- 用于回到顶部 -->
     <ImageButton
