@@ -45,7 +45,6 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':mainnavigatetabbar')
-    compile project(':smallvideo')
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'liji.library.dev:citypickerview:1.1.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
