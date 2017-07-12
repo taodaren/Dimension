@@ -6,7 +6,7 @@ package com.olacos.kunyu.global.internet;
 
 public class I {
 
-    public static final String BASE_URL = "http://im.zxb01.com/api/";
+    public static final String BASE_URL = "http://used.zxb01.com/api/";
 
     //获取验证码
     public static final String GET_CODE = "send/sendMsm";

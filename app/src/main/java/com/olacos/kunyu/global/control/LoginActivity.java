@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.olacos.kunyu.R;
+import com.olacos.kunyu.global.bean.LoginBean;
+import com.olacos.kunyu.global.util.HttpMethods;
 import com.umeng.socialize.UMAuthListener;
 import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.bean.SHARE_MEDIA;
@@ -20,6 +23,8 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import rx.Observer;
+
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_REGISTER = 0;
@@ -27,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnLogin;
     private TextView textWeiXin, textQQ, textWeiBo;
     private EditText editAccount, editPassword;
+    private LoginBean loginBean;
 
     private UMShareAPI mShareAPI = null;
 
@@ -64,6 +70,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void initView() {
+        loginBean = new LoginBean();
+
         btnLogin = (Button) findViewById(R.id.btn_login);
         editAccount = (EditText) findViewById(R.id.edit_account_login);
         editPassword = (EditText) findViewById(R.id.edit_password_login);
@@ -118,17 +126,28 @@ public class LoginActivity extends AppCompatActivity {
         String account = editAccount.getText().toString();
         String password = editPassword.getText().toString();
 
-        //发送网络请求
+        // TODO: 此处处理登陆逻辑
 
-        new android.os.Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        //完成调用 onLoginSuccess 或 onLoginFailed
-                        onLoginSuccess();
-                        // onLoginFailed();
-                        progressDialog.dismiss();
-                    }
-                }, 3000);
+        //获取登录网络请求
+        getLoginData(account, password);
+
+        Log.e(TAG, "login: code" + loginBean.getCode());
+
+        if (loginBean.getCode() == 0) {
+            onLoginSuccess();
+            progressDialog.dismiss();
+        } else {
+            onLoginFailed();
+        }
+//        new android.os.Handler().postDelayed(
+//                new Runnable() {
+//                    public void run() {
+//                        //完成调用 onLoginSuccess 或 onLoginFailed
+//                        onLoginSuccess();
+//                        // onLoginFailed();
+//                        progressDialog.dismiss();
+//                    }
+//                }, 3000);
     }
 
     @Override
@@ -219,5 +238,24 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText( getApplicationContext(), "取消授权", Toast.LENGTH_SHORT).show();
         }
     };
+
+    private void getLoginData(String phoneNum, String password) {
+        HttpMethods.getInstance().getLogin(new Observer<LoginBean>() {
+            @Override
+            public void onCompleted() {
+                Log.d(TAG, "onCompleted");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                Log.d(TAG, "onError: " + e.getMessage());
+            }
+
+            @Override
+            public void onNext(LoginBean loginBean) {
+                Log.d(TAG, "onNext: loginBean" + loginBean);
+            }
+        }, phoneNum, password);
+    }
 
 }

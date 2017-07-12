@@ -1,5 +1,6 @@
 package com.olacos.kunyu.global.util;
 
+import com.olacos.kunyu.global.bean.LoginBean;
 import com.olacos.kunyu.global.bean.RegisterCodeBean;
 import com.olacos.kunyu.global.internet.ApiService;
 import com.olacos.kunyu.global.internet.I;
@@ -16,6 +17,7 @@ import rx.schedulers.Schedulers;
 
 
 public class HttpMethods {
+    private static final String TAG = "HttpMethods";
     private static final int TIME_OUT = 4;
     private volatile static HttpMethods instance;
 
@@ -64,4 +66,14 @@ public class HttpMethods {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(observer);
     }
+
+    public void getLogin(Observer<LoginBean> observer, String username, String password) {
+
+        apiService.getData(username, password)
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(observer);
+    }
+
 }
