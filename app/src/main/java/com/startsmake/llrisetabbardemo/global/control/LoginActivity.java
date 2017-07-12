@@ -12,7 +12,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.startsmake.llrisetabbardemo.R;
+import com.umeng.socialize.UMAuthListener;
+import com.umeng.socialize.UMShareAPI;
+import com.umeng.socialize.bean.SHARE_MEDIA;
 
+import java.util.Iterator;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -24,12 +29,17 @@ public class LoginActivity extends AppCompatActivity {
     private TextView textWeiXin, textQQ, textWeiBo;
     private EditText editAccount, editPassword;
 
+    private UMShareAPI mShareAPI = null;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         setTitle();
         initView();
+        //首先获取UMShareAPI
+        mShareAPI = UMShareAPI.get(this);
     }
 
     private void setTitle() {
@@ -66,6 +76,28 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 login();
+            }
+        });
+
+        textWeiXin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //获取用户信息
+                mShareAPI.getPlatformInfo(LoginActivity.this, SHARE_MEDIA.WEIXIN, umAuthListener);
+            }
+        });
+
+        textQQ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mShareAPI.getPlatformInfo(LoginActivity.this, SHARE_MEDIA.QQ, umAuthListener);
+            }
+        });
+
+        textWeiBo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mShareAPI.getPlatformInfo(LoginActivity.this, SHARE_MEDIA.SINA, umAuthListener);
             }
         });
     }
@@ -105,7 +137,8 @@ public class LoginActivity extends AppCompatActivity {
         if (requestCode == REQUEST_REGISTER) {
             if (resultCode == RESULT_OK) {
 
-                // TODO: 在这里实现成功的注册逻辑
+                //TODO: 在这里实现成功的注册逻辑
+                UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
                 //默认情况下，我们刚刚完成活动并自动登录
                 this.finish();
             }
@@ -162,5 +195,30 @@ public class LoginActivity extends AppCompatActivity {
 
         return m.matches();
     }
+
+    /**
+     * 授权回调
+     */
+    private UMAuthListener umAuthListener = new UMAuthListener() {
+        @Override
+        public void onStart(SHARE_MEDIA share_media) {
+            //授权开始的回调
+        }
+
+        @Override
+        public void onComplete(SHARE_MEDIA share_media, int i, Map<String, String> map) {
+            Toast.makeText(getApplicationContext(), "授权成功", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onError(SHARE_MEDIA share_media, int i, Throwable throwable) {
+            Toast.makeText( getApplicationContext(), "授权失败", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onCancel(SHARE_MEDIA share_media, int i) {
+            Toast.makeText( getApplicationContext(), "取消授权", Toast.LENGTH_SHORT).show();
+        }
+    };
 
 }
