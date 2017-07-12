@@ -47,11 +47,26 @@ public class WebUrl {
 
 
     /**
+     * 二手
+     * html/shangpin/shangpin-ershoujiaoyi.html
+     */
+    public static final String TAB_SECOND = BASE_URL + "/club/index.html";
+    //分类
+    public static final String CATEGORY = BASE_URL + "/club/index.html";
+
+
+    /**
      * 社团
      */
-    public static final String TAB_LEAGUE = BASE_URL + "/club/activity.html";
+    public static final String TAB_LEAGUE = BASE_URL + "/club/index.html";
     //更多活动
     public static final String MORE_ACTIVITY = BASE_URL + "/club/activity.html";
     //更多作品
     public static final String MORE_WORKS = BASE_URL + "/club/works.html";
+
+
+    /**
+     * 个人中心
+     */
+    public static final String TAB_MINE = BASE_URL + "/user/index.html";
 }

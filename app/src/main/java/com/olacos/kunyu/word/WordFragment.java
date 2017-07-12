@@ -45,11 +45,13 @@ public class WordFragment extends Fragment {
         webView.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                //按下返回键并且 webView 界面可以返回
                 if ((keyCode == KeyEvent.KEYCODE_BACK) && webView.canGoBack()) {
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             webView.goBack();
+
                         }
                     });
                     return true;
@@ -57,6 +59,7 @@ public class WordFragment extends Fragment {
                 return false;
             }
         });
+        webView.reload();
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl(WebUrl.TAB_WORD);

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +43,23 @@ public class HomeFragment extends Fragment {
     }
 
     private void initWebView(View view) {
-        WebView webView = (WebView) view.findViewById(R.id.web_home);
+        final WebView webView = (WebView) view.findViewById(R.id.web_home);
+        webView.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                //按下返回键并且 webView 界面可以返回
+                if ((keyCode == KeyEvent.KEYCODE_BACK) && webView.canGoBack()) {
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            webView.goBack();
+                        }
+                    });
+                    return true;
+                }
+                return false;
+            }
+        });
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl(WebUrl.TAB_HOME);

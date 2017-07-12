@@ -7,9 +7,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -17,6 +20,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.olacos.kunyu.global.internet.WebUrl;
 import com.olacos.kunyu.global.util.GoTopScrollView;
 import com.olacos.kunyu.R;
 
@@ -30,6 +34,7 @@ public class SecondhandFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_secondhand, container, false);
         initTitle(view);
+        initWebView(view);
         setBtnToTop(view, container);
         return view;
     }
@@ -38,6 +43,29 @@ public class SecondhandFragment extends Fragment {
         setMi(view);
         setShape(view);
         setSelect(view);
+    }
+
+    private void initWebView(View view) {
+        final WebView webView = (WebView) view.findViewById(R.id.web_secondhand);
+        webView.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                //按下返回键并且 webView 界面可以返回
+                if ((keyCode == KeyEvent.KEYCODE_BACK) && webView.canGoBack()) {
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            webView.goBack();
+                        }
+                    });
+                    return true;
+                }
+                return false;
+            }
+        });
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.setWebViewClient(new WebViewClient());
+        webView.loadUrl(WebUrl.TAB_SECOND);
     }
 
     private void setSelect(View view) {

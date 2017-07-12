@@ -10,10 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
+        <WebView
+            android:id="@+id/web_sort"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:src="@drawable/eg_sort" />
+            android:layout_height="wrap_content" />
     </ScrollView>
 </LinearLayout>

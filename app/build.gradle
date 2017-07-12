@@ -5,7 +5,7 @@ android {
     buildToolsVersion '25.0.0'
 
     defaultConfig {
-        applicationId "com.startsmake.llrisetabbardemo"
+        applicationId "com.olacos.kunyu"
         minSdkVersion 23
         targetSdkVersion 22
         versionCode 1
@@ -64,4 +64,5 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.squareup.retrofit2:converter-gson:2.3.0'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
+    compile 'in.srain.cube:ultra-ptr:1.0.11'
 }
