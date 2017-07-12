@@ -10,7 +10,6 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/mainnavigatetabbar" />
-            <option value="$PROJECT_DIR$/smallvideo" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

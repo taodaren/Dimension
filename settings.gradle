@@ -1,1 +1,1 @@
-include ':app', ':mainnavigatetabbar', ':smallvideo'
+include ':app', ':mainnavigatetabbar'
