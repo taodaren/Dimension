@@ -11,7 +11,7 @@
     <com.startsmake.llrisetabbardemo.global.util.GoTopScrollView
         android:id="@+id/go_top_scroll_word"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/layout_word">
 
         <LinearLayout
