@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,7 +40,23 @@ public class WordFragment extends Fragment {
     }
 
     private void initWebView(View view) {
-        WebView webView = (WebView) view.findViewById(R.id.web_word);
+        final WebView webView = (WebView) view.findViewById(R.id.web_word);
+        //在 Fragment 中点击返回键返回上一页
+        webView.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyCode == KeyEvent.KEYCODE_BACK) && webView.canGoBack()) {
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            webView.goBack();
+                        }
+                    });
+                    return true;
+                }
+                return false;
+            }
+        });
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl(WebUrl.TAB_WORD);
@@ -49,8 +66,7 @@ public class WordFragment extends Fragment {
         EditText editFind = (EditText) view.findViewById(R.id.edit_tab_shape);
         editFind.setHint("社团活动、搜索");
 
-        ImageView imgFind = (ImageView) view.findViewById(R.id.img_tab_shape);
-        imgFind.setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.tab_shape).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getContext(), "跳转到搜索界面", Toast.LENGTH_SHORT).show();
