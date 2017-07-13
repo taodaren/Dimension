@@ -100,10 +100,10 @@
             android:theme="@style/Theme.UMDefault" />
         <activity android:name=".video.VideoActivity" />
         <activity
-            android:name="video.EditVideoActivity"
+            android:name=".video.EditVideoActivity"
             android:windowSoftInputMode="adjustResize|adjustPan" />
-        <activity android:name="video.VideoPlayActivity" />
-        <activity android:name="video.CutVideoActivity" />
+        <activity android:name=".video.VideoPlayActivity" />
+        <activity android:name=".video.CutVideoActivity" />
 
         <meta-data
             android:name="UMENG_APPKEY"
