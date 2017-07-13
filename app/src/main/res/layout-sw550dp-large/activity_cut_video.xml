@@ -10,14 +10,14 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="50dp">
 
-        <com.example.zhaoshuang.weixinrecordeddemo.MyVideoView
+        <com.olacos.kunyu.video.MyVideoView
             android:id="@+id/vv_play"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
             android:layout_margin="30dp" />
 
-        <com.example.zhaoshuang.weixinrecordeddemo.CutView
+        <com.olacos.kunyu.video.CutView
             android:id="@+id/cv_video"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

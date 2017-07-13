@@ -14,7 +14,7 @@ public class WebUrl {
     /**
      * 首页
      */
-    public static final String TAB_HOME = "http://192.168.1.145/two/pages/index.html";
+    public static final String TAB_HOME = BASE_URL + "/goods/index.html";
 
     /**
      * 社区
@@ -50,9 +50,9 @@ public class WebUrl {
      * 二手
      * html/shangpin/shangpin-ershoujiaoyi.html
      */
-    public static final String TAB_SECOND = BASE_URL + "/club/index.html";
+    public static final String TAB_SECOND = BASE_URL + "/goods/ershoujiaoyi.html";
     //分类
-    public static final String CATEGORY = BASE_URL + "/club/index.html";
+    public static final String CATEGORY = BASE_URL + "/goods/goodcate.html";
 
 
     /**
