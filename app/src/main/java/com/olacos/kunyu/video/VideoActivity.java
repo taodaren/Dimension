@@ -16,7 +16,6 @@ import com.olacos.kunyu.R;
 import com.yixia.camera.MediaRecorderNative;
 import com.yixia.camera.VCamera;
 import com.yixia.camera.model.MediaObject;
-import com.yixia.camera.util.FocusSurfaceView;
 import com.yixia.videoeditor.adapter.UtilityAdapter;
 
 import java.util.LinkedList;
@@ -53,7 +52,7 @@ public class VideoActivity extends BaseActivity implements View.OnClickListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_video);
 
         sv_ffmpeg = (FocusSurfaceView) findViewById(R.id.sv_ffmpeg);
         rb_start = (RecordedButton) findViewById(R.id.rb_start);

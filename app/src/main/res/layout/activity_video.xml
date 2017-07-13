@@ -4,11 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.zhaoshuang.weixinrecordeddemo.FocusSurfaceView
+    <com.olacos.kunyu.video.FocusSurfaceView
         android:id="@+id/sv_ffmpeg"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-    <com.example.zhaoshuang.weixinrecordeddemo.MyVideoView
+    <com.olacos.kunyu.video.MyVideoView
         android:id="@+id/vv_play"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -61,7 +61,7 @@
             android:background="@drawable/rotia_shape"
             android:src="@mipmap/video_next"/>
     </RelativeLayout>
-    <com.example.zhaoshuang.weixinrecordeddemo.RecordedButton
+    <com.olacos.kunyu.video.RecordedButton
         android:id="@+id/rb_start"
         android:layout_width="120dp"
         android:layout_height="120dp"
