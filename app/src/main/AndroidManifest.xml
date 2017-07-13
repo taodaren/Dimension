@@ -18,7 +18,7 @@
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
 
     <application
-        android:name="com.olacos.kunyu.global.App"
+        android:name="com.olacos.kunyu.global.MyApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_olacos"
@@ -98,6 +98,12 @@
             android:name="com.umeng.socialize.editorpage.ShareActivity"
             android:excludeFromRecents="true"
             android:theme="@style/Theme.UMDefault" />
+        <activity android:name=".video.VideoActivity" />
+        <activity
+            android:name="video.EditVideoActivity"
+            android:windowSoftInputMode="adjustResize|adjustPan" />
+        <activity android:name="video.VideoPlayActivity" />
+        <activity android:name="video.CutVideoActivity" />
 
         <meta-data
             android:name="UMENG_APPKEY"

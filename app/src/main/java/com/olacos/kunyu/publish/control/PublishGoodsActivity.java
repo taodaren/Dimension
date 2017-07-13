@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.lljjcoder.citypickerview.widget.CityPicker;
 import com.olacos.kunyu.R;
+import com.olacos.kunyu.video.VideoActivity;
 
 /**
  * PopWindow → 发布商品
@@ -49,8 +50,8 @@ public class PublishGoodsActivity extends AppCompatActivity implements View.OnCl
         switch (view.getId()) {
             case R.id.ll_goods_video:
                 //跳转小视频
-//                Intent intent = new Intent(this, VideoActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(this, VideoActivity.class);
+                startActivity(intent);
                 break;
             case R.id.layout_position:
                 setCitySelected();
