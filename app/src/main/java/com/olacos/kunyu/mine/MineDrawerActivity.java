@@ -23,31 +23,23 @@ public class MineDrawerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mine_drawer);
 
-        initTitle();
+//        initTitle();
         initWebView();
     }
 
-    private void initTitle() {
-        ImageView imgBack = (ImageView) findViewById(R.id.img_back);
-        imgBack.setVisibility(View.VISIBLE);
-        imgBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
-
-        TextView textTitle = (TextView) findViewById(R.id.text_title);
-        textTitle.setText("个人中心");
-
-//        final ImageView imgBack = (ImageView) findViewById(R.id.img_back_tab);
+//    private void initTitle() {
+//        ImageView imgBack = (ImageView) findViewById(R.id.img_back);
+//        imgBack.setVisibility(View.VISIBLE);
 //        imgBack.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
 //                finish();
 //            }
 //        });
-    }
+//
+//        TextView textTitle = (TextView) findViewById(R.id.text_title);
+//        textTitle.setText("个人中心");
+//    }
 
     private void initWebView() {
         webView = (WebView) findViewById(R.id.web_mine_drawer);
