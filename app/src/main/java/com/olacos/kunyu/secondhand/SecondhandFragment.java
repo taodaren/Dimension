@@ -13,16 +13,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.olacos.kunyu.R;
+import com.olacos.kunyu.global.control.SearchActivity;
 import com.olacos.kunyu.global.internet.WebUrl;
 import com.olacos.kunyu.global.util.GoTopScrollView;
-import com.olacos.kunyu.R;
+import com.olacos.kunyu.mine.MineDrawerActivity;
 
 /**
  * 二手交易
@@ -80,12 +80,19 @@ public class SecondhandFragment extends Fragment {
     }
 
     private void setShape(View view) {
-        EditText editFind = (EditText) view.findViewById(R.id.edit_shape);
-        ImageView imgFind = (ImageView) view.findViewById(R.id.img_shape);
-        imgFind.setOnClickListener(new View.OnClickListener() {
+//        view.findViewById(R.id.tab_shape).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(getContext(), SearchActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+        LinearLayout layoutShape = (LinearLayout) view.findViewById(R.id.home_shape);
+        layoutShape.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), "跳转到搜索界面", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getContext(), SearchActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -96,8 +103,11 @@ public class SecondhandFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 //点击调出侧滑菜单（坑在 getActivity() 和 Gravity.LEFT）
-                DrawerLayout drawerLayout = (DrawerLayout) getActivity().findViewById(R.id.drawer_layout);
-                drawerLayout.openDrawer(Gravity.LEFT);
+//                DrawerLayout drawerLayout = (DrawerLayout) getActivity().findViewById(R.id.drawer_layout);
+//                drawerLayout.openDrawer(Gravity.LEFT);
+                //跳转个人中心
+                Intent intent = new Intent(getContext(), MineDrawerActivity.class);
+                startActivity(intent);
             }
         });
     }

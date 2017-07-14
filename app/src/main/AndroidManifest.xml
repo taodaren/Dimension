@@ -6,7 +6,6 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -18,7 +17,7 @@
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
 
     <application
-        android:name="com.olacos.kunyu.global.MyApplication"
+        android:name=".global.MyApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_olacos"
@@ -31,7 +30,7 @@
         <!-- 声明Activity时加上：android:windowSoftInputMode="stateHidden" -->
         <!-- 解决软键盘将布局顶起方法：android:windowSoftInputMode="adjustPan|stateHidden" -->
         <activity
-            android:name="com.olacos.kunyu.global.control.MainActivity"
+            android:name=".global.control.SplashActivity"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,36 +38,37 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.olacos.kunyu.home.HomeQRCodeActivity" />
-        <activity android:name="com.olacos.kunyu.home.HomeMsgActivity" />
-        <activity android:name="com.olacos.kunyu.secondhand.SortActivity" />
-        <activity android:name="com.olacos.kunyu.mine.MineDrawerActivity" />
+        <activity android:name=".home.HomeQRCodeActivity" />
+        <activity android:name=".home.HomeMsgActivity" />
+        <activity android:name=".secondhand.SortActivity" />
+        <activity android:name=".mine.MineDrawerActivity" />
         <activity
-            android:name="com.olacos.kunyu.publish.control.PublishGoodsActivity"
+            android:name=".publish.control.PublishGoodsActivity"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name="com.olacos.kunyu.publish.control.PublishActivityActivity"
+            android:name=".publish.control.PublishActivityActivity"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name="com.olacos.kunyu.publish.control.PublishPostsActivity"
+            android:name=".publish.control.PublishPostsActivity"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name="com.olacos.kunyu.global.control.LoginActivity"
+            android:name=".global.control.LoginActivity"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name="com.olacos.kunyu.global.control.RegisterActivity"
+            android:name=".global.control.RegisterActivity"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name="com.olacos.kunyu.WBShareActivity"
+            android:name=".WBShareActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.olacos.kunyu.wxapi.WXEntryActivity"
+            android:name=".wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:screenOrientation="portrait"
@@ -77,7 +77,6 @@
             android:name="com.umeng.qq.tencent.AuthActivity"
             android:launchMode="singleTask"
             android:noHistory="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -87,13 +86,11 @@
                 <data android:scheme="tencent100424468" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.umeng.qq.tencent.AssistActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
         <activity
             android:name="com.umeng.socialize.editorpage.ShareActivity"
             android:excludeFromRecents="true"
@@ -104,10 +101,13 @@
             android:windowSoftInputMode="adjustResize|adjustPan" />
         <activity android:name=".video.VideoPlayActivity" />
         <activity android:name=".video.CutVideoActivity" />
+        <activity android:name=".global.control.MainActivity" />
 
         <meta-data
             android:name="UMENG_APPKEY"
             android:value="57b1ae8e67e58eeb4800078d" />
+
+        <activity android:name=".global.control.SearchActivity"></activity>
     </application>
 
 </manifest>

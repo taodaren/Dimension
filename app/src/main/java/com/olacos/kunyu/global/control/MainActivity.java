@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity /*implements View.OnClickLis
 
     private void initTabBar(Bundle savedInstanceState) {
         mTabBar = (MainNavigateTabBar) findViewById(R.id.mainTabBar);
-
         mTabBar.onRestoreInstanceState(savedInstanceState);
 
         mTabBar.addTab(HomeFragment.class, new MainNavigateTabBar
@@ -76,6 +75,7 @@ public class MainActivity extends AppCompatActivity /*implements View.OnClickLis
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
+        //保存当前选中的选项状态
         mTabBar.onSaveInstanceState(outState);
     }
 

@@ -37,5 +37,5 @@
         app:qrcv_toolbarHeight="56dp"
         app:qrcv_topOffset="90dp" />
 
-    <include layout="@layout/layout_qrcode_button" />
+    <!--<include layout="@layout/layout_qrcode_button" />-->
 </RelativeLayout>

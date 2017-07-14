@@ -18,11 +18,13 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lljjcoder.citypickerview.widget.CityPicker;
+import com.olacos.kunyu.global.control.SearchActivity;
 import com.olacos.kunyu.global.internet.WebUrl;
 import com.olacos.kunyu.global.util.GoTopScrollView;
 import com.olacos.kunyu.R;
@@ -142,10 +144,25 @@ public class HomeFragment extends Fragment {
     }
 
     private void setShape(View view) {
-        //设置 EditText 不自动弹出
-        EditText editText = (EditText) view.findViewById(R.id.edit_shape);
-        InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
+        LinearLayout layoutShape = (LinearLayout) view.findViewById(R.id.layout_shape_home);
+        layoutShape.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+//        //设置 EditText 不自动弹出
+//        view.findViewById(R.id.edit_shape).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(getContext(), SearchActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+
+//        InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+//        imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
     }
 
     private void setQrCode(View view) {

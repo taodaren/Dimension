@@ -2,10 +2,9 @@ package com.olacos.kunyu.league;
 
 import android.animation.LayoutTransition;
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.widget.DrawerLayout;
-import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,12 +13,13 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.widget.LinearLayout;
 
 import com.olacos.kunyu.R;
+import com.olacos.kunyu.global.control.SearchActivity;
 import com.olacos.kunyu.global.internet.WebUrl;
 import com.olacos.kunyu.global.util.GoTopScrollView;
+import com.olacos.kunyu.mine.MineDrawerActivity;
 
 /**
  * 社团
@@ -74,22 +74,49 @@ public class LeagueFragment extends Fragment {
 //    }
 
     private void initTitle(View view) {
-        ImageView imgMiTab = (ImageView) view.findViewById(R.id.img_mi_tab);
-        imgMiTab.setOnClickListener(new View.OnClickListener() {
+        setMi(view);
+        setShape(view);
+//        setBackBtn(view);
+    }
+
+//    private void setBackBtn(View view) {
+//        ImageView imgBack = (ImageView) view.findViewById(R.id.text_select_league);
+//        imgBack.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                getActivity().finish();
+//            }
+//        });
+//    }
+
+    private void setMi(View view) {
+        ImageButton imgBtnMiHand = (ImageButton) view.findViewById(R.id.ib_mi_league);
+        imgBtnMiHand.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //点击调出侧滑菜单（坑在 getActivity() 和 Gravity.LEFT）
-                DrawerLayout drawerLayout = (DrawerLayout) getActivity().findViewById(R.id.drawer_layout);
-                drawerLayout.openDrawer(Gravity.LEFT);
+//                DrawerLayout drawerLayout = (DrawerLayout) getActivity().findViewById(R.id.drawer_layout);
+//                drawerLayout.openDrawer(Gravity.LEFT);
+                //跳转个人中心
+                Intent intent = new Intent(getContext(), MineDrawerActivity.class);
+                startActivity(intent);
             }
         });
+    }
 
-        TextView textTitle = (TextView) view.findViewById(R.id.text_title_tab);
-        textTitle.setText("社团");
+    private void setShape(View view) {
+        LinearLayout layoutShape = (LinearLayout) view.findViewById(R.id.home_shape);
+        layoutShape.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), SearchActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void setBtnToTop(View view, ViewGroup container) {
-        container = (RelativeLayout) view.findViewById(R.id.layout_league);
+        container = (LinearLayout) view.findViewById(R.id.layout_league);
         container.setLayoutTransition(new LayoutTransition());
 
         ImageButton imgBtnTop = (ImageButton) view.findViewById(R.id.goto_top_league);

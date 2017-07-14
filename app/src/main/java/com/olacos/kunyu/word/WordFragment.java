@@ -2,6 +2,7 @@ package com.olacos.kunyu.word;
 
 import android.animation.LayoutTransition;
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
@@ -10,18 +11,21 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.olacos.kunyu.global.util.GoTopScrollView;
 import com.olacos.kunyu.R;
+import com.olacos.kunyu.global.control.SearchActivity;
 import com.olacos.kunyu.global.internet.WebUrl;
+import com.olacos.kunyu.global.util.GoTopScrollView;
+import com.olacos.kunyu.mine.MineDrawerActivity;
 
 /**
  * 社区
@@ -34,14 +38,12 @@ public class WordFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_word, container, false);
         initTitle(view);
         initWebView(view);
-        initShape(view);
         setBtnToTop(view, container);
         return view;
     }
 
     private void initWebView(View view) {
         final WebView webView = (WebView) view.findViewById(R.id.web_word);
-        //在 Fragment 中点击返回键返回上一页
         webView.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
@@ -51,7 +53,6 @@ public class WordFragment extends Fragment {
                         @Override
                         public void run() {
                             webView.goBack();
-
                         }
                     });
                     return true;
@@ -59,41 +60,55 @@ public class WordFragment extends Fragment {
                 return false;
             }
         });
-        webView.reload();
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl(WebUrl.TAB_WORD);
     }
 
-    private void initShape(View view) {
-        EditText editFind = (EditText) view.findViewById(R.id.edit_tab_shape);
-        editFind.setHint("社团活动、搜索");
-
-        view.findViewById(R.id.tab_shape).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getContext(), "跳转到搜索界面", Toast.LENGTH_SHORT).show();
-            }
-        });
+    private void initTitle(View view) {
+        setMi(view);
+        setShape(view);
+//        setBackBtn(view);
     }
 
-    private void initTitle(View view) {
-        ImageView imgMiTab = (ImageView) view.findViewById(R.id.img_mi_tab);
-        imgMiTab.setOnClickListener(new View.OnClickListener() {
+//    private void setBackBtn(View view) {
+//        ImageView imgBack = (ImageView) view.findViewById(R.id.text_select_word);
+//        imgBack.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                getActivity().finish();
+//            }
+//        });
+//    }
+
+    private void setMi(View view) {
+        ImageButton imgBtnMiHand = (ImageButton) view.findViewById(R.id.ib_mi_word);
+        imgBtnMiHand.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //点击调出侧滑菜单（坑在 getActivity() 和 Gravity.LEFT）
-                DrawerLayout drawerLayout = (DrawerLayout) getActivity().findViewById(R.id.drawer_layout);
-                drawerLayout.openDrawer(Gravity.LEFT);
+//                DrawerLayout drawerLayout = (DrawerLayout) getActivity().findViewById(R.id.drawer_layout);
+//                drawerLayout.openDrawer(Gravity.LEFT);
+                //跳转个人中心
+                Intent intent = new Intent(getContext(), MineDrawerActivity.class);
+                startActivity(intent);
             }
         });
+    }
 
-        TextView textTitle = (TextView) view.findViewById(R.id.text_title_tab);
-        textTitle.setText("社区");
+    private void setShape(View view) {
+        LinearLayout layoutShape = (LinearLayout) view.findViewById(R.id.home_shape);
+        layoutShape.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), SearchActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void setBtnToTop(View view, ViewGroup container) {
-        container = (RelativeLayout) view.findViewById(R.id.layout_word);
+        container = (LinearLayout) view.findViewById(R.id.layout_word);
         container.setLayoutTransition(new LayoutTransition());
 
         ImageButton imgBtnTop = (ImageButton) view.findViewById(R.id.goto_top_word);

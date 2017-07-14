@@ -53,8 +53,8 @@ public class LoginActivity extends AppCompatActivity {
         ibMine.setVisibility(View.GONE);
 
         //设置标题
-        TextView textTitle = (TextView) findViewById(R.id.text_title_tab);
-        textTitle.setText("登录");
+//        TextView textTitle = (TextView) findViewById(R.id.text_title_tab);
+//        textTitle.setText("登录");
 
         //设置注册按钮
         TextView textRegister = (TextView) findViewById(R.id.text_title_register);

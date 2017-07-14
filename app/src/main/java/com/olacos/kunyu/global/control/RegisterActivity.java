@@ -40,8 +40,8 @@ public class RegisterActivity extends AppCompatActivity {
         ibMine.setVisibility(View.GONE);
 
         //设置标题
-        TextView textTitle = (TextView) findViewById(R.id.text_title_tab);
-        textTitle.setText("注册");
+//        TextView textTitle = (TextView) findViewById(R.id.text_title_tab);
+//        textTitle.setText("注册");
     }
 
     private void setEditText() {

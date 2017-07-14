@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/home_shape"
     android:layout_width="wrap_content"
-    android:layout_height="40dp"
+    android:layout_height="30dp"
     android:layout_gravity="center_vertical"
     android:layout_weight="1"
     android:background="@drawable/bg_shape"
@@ -18,7 +18,7 @@
 
     <!--background为null去掉下划线-->
     <!--cursorVisible为false去掉光标-->
-    <EditText
+    <TextView
         android:id="@+id/edit_shape"
         android:layout_width="0dp"
         android:layout_height="match_parent"
