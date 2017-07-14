@@ -18,6 +18,12 @@ public class WebUrl {
 
 
     /**
+     * 消息
+     */
+    public static final String MSG = BASE_URL + "/community/index.html";
+
+
+    /**
      * 搜索
      */
     public static final String SEARCH = BASE_URL + "/Goods/search_open";
